@@ -20,12 +20,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# FIXME: Change to env var
 SECRET_KEY = 'django-insecure-$4-4@(75$jb23*nqfrn+k3dm6%z0cr&*+#hkyx=j214hkj5$zo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# FIXME: Change to env var
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# FIXME: Change to env var
+ALLOWED_HOSTS = [
+    "*",
+]
 
 
 # Application definition
@@ -37,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'streamaaa',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
+}
