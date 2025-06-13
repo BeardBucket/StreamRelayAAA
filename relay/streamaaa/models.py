@@ -36,7 +36,7 @@ class GroupRelayAccess(models.Model):
     guid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False,null=False)
     quick = models.SlugField(max_length=100, unique=True, editable=False,null=False)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    relays_push = models.ManyToManyField(Relay, through='WithPush')
-    relays_pull = models.ManyToManyField(Relay, through='WithPull')
+    relays_push = models.ManyToManyField(Relay, related_name='with_push')
+    relays_pull = models.ManyToManyField(Relay, related_name='with_pull')
 
 
