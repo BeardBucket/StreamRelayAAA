@@ -9,6 +9,7 @@ class StreamUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, editable=False,null=False)
     quick = models.SlugField(max_length=100, unique=True, editable=False,null=False)
 
+
 class StreamGroup(models.Model):
     """ Extra fields off Group model """
     guid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False,null=False)
