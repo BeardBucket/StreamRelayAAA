@@ -32,7 +32,7 @@ class StreamKey(models.Model):
     guid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False, null=False)
     quick = models.SlugField(max_length=100, default=generate_name_f(num=5), unique=True, editable=False, null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, editable=False, null=False)
-    key = models.SlugField(max_length=128, default=generate_name_f(num=5), unique=True, editable=True, null=False)
+    key = models.SlugField(max_length=128, default=generate_name_f(num=7), unique=True, editable=True, null=False)
     enabled = models.BooleanField(default=False, editable=True, null=False, blank=False)
 
     def __str__(self):
