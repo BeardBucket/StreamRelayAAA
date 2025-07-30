@@ -4,7 +4,7 @@ from .names import generate_name_f
 class Test(TestCase):
     def test_generate_name_f(self):
         CNT=5
-        tnames=generate_name_f(num=CNT)
+        tnames=generate_name_f(num=CNT)()
         self.assertTrue(isinstance(tnames, str))
         count=0
         for tname in tnames:

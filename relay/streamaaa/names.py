@@ -5,7 +5,7 @@ from .words import ALL,NAMES,WORDS
 def generate_name_f(num: int = 4):
     """ Generate a random set of words with a count of `count` words"""
     @functools.wraps(generate_name_f)
-    def wrapped():
+    def wrapped() -> str:
         total = len(ALL)
         words = []
         for i in range(num):
